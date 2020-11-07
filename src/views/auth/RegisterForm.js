@@ -63,24 +63,6 @@ const RegisterView = ({form:{form,onchange,onsubmit,registerFormValid}}) => {
                   value={form.Name ||""}
                   variant="outlined"
                 />
-                <TextField
-                  fullWidth
-                  label="Enter contact"
-                  margin="normal"
-                  name="Contact"
-                  onChange={onchange}
-                  value={form.Contact ||""}
-                  variant="outlined"
-                />
-                <TextField
-                  fullWidth
-                  label="Enter location"
-                  margin="normal"
-                  name="Location"
-                  onChange={onchange}
-                  value={form.Location ||""}
-                  variant="outlined"
-                />
                 <Box
                   alignItems="flex-start"
                   display="flex"
@@ -90,10 +72,13 @@ const RegisterView = ({form:{form,onchange,onsubmit,registerFormValid}}) => {
                 >
                    <FormLabel component="legend">Select User Type</FormLabel>
                     <RadioGroup aria-label="userType" name="userType" value={form.userType||"Producer"} onChange={onchange}>
-                    <FormControlLabel value="Producer" control={<Radio />} label="Producer" />
-                    <FormControlLabel value="Lab" control={<Radio />} label="Lab" />
-                    <FormControlLabel value="Consumer" control={<Radio />} label="Consumer" />
-                    <FormControlLabel value="Inspector" control={<Radio />} label="Inspector" />
+                    <FormControlLabel value="BatchDetails" control={<Radio />} label="Seed Producing agency" />
+                    <FormControlLabel value="seedGrower" control={<Radio />} label="Seed Grower" />
+                    <FormControlLabel value="processor" control={<Radio />} label="Seed Processor" />
+                    <FormControlLabel value="lab" control={<Radio />} label="Lab" />
+                    <FormControlLabel value="certification" control={<Radio />} label="Seed Certification authority" />
+                    <FormControlLabel value="distribution" control={<Radio />} label="Distributor" />
+
                     </RadioGroup>
                 </Box>
                 <Box my={2}>

@@ -20,8 +20,6 @@ const useForm = ()=>{
     }
 
     const registerFormValid = !form.Name?.length ||
-    !form.Location?.length ||
-    !form.Contact?.length ||
     !form.Address?.length
 
 
