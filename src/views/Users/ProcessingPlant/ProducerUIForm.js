@@ -26,12 +26,20 @@ const ProducerUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
            </TextField>
         <TextField
             variant="outlined"
-            label="BatchQuantity"
+            label="Enter total quantity"
             margin="normal"
             onChange={onchange}
-            value={form.BatchQuantity||""}
-            name="BatchQuantity">
+            value={form.TotalQuantity||""}
+            name="TotalQuantity">
            </TextField>
+           <TextField
+            id="date"
+           label="Enter Processing date"
+            type="date"
+            value={form.date||"2017-05-24"}
+            name="date"
+            onChange={onchange}
+           />
        </Box>
        <Box p={4}>
                   <Button

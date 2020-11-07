@@ -16,10 +16,9 @@ const useForm = ()=>{
     }
 
     const registerFormValid = !form.BatchNo?.length ||
-    !form.TypeOfSeed?.length ||
-    !form.Fertilizer?.length ||
-    !form.SeedCondition?.length||
-    !form.SeedQuantity?.length
+    !form.date?.length ||
+    !form.Validity?.length ||
+    !form.Certificate?.length
 
     return({form,onchange,onsubmit,registerFormValid})
 }

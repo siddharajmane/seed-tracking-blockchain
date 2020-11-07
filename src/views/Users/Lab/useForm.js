@@ -15,11 +15,8 @@ const useForm = ()=>{
         alert("Lab form data submitted")
     }
 
-    const registerFormValid = !form.Temp?.length ||
-    !form.Purification?.length ||
-    !form.Germ?.length ||
-    !form.SeedMoisture?.length||
-    !form.SeedQuantity?.length ||
+    const registerFormValid = !form.date?.length ||
+    !form.Result?.length ||
     !form.BatchNo?.length
 
     return({form,onchange,onsubmit,registerFormValid})

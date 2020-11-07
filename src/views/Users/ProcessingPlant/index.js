@@ -1,15 +1,14 @@
 import React from "react"
-import InspectorForm from "./InspectorForm"
+import ProducerForm from "./ProducerForm"
 import useForm from "./useForm"
-import LatestOrders from "../../reports/DashboardView/LatestOrders"
 import {
     makeStyles,
     Paper,
     Grid,
     Box,
     Typography,
-} from "@material-ui/core"
-
+  } from "@material-ui/core"
+import LatestOrders from "../../reports/DashboardView/LatestOrders"
   import { SupervisedUserCircleRounded } from '@material-ui/icons'
   
   const useStyles = makeStyles((theme) => ({
@@ -24,7 +23,7 @@ import {
       },
     }));
 
-const InspectorModule = ()=>{
+const ProducerModule = ()=>{
 
     const classes = useStyles()
     return(
@@ -40,11 +39,7 @@ const InspectorModule = ()=>{
                             justifyContent="space-between">
                             <Typography  variant="h3"
                                  color="Black">
-                                Username
-                            </Typography>
-                            <Typography variant="h3"
-                                 color="Black">
-                                UserType
+                                Processing Plant
                             </Typography>
                             </Box>
                         </Box>
@@ -52,7 +47,7 @@ const InspectorModule = ()=>{
                 </Grid>
                 <Grid item xs={12}>
                     <Paper elevation={6} className={classes.paper}>
-                        <InspectorForm form={useForm()}/>
+                        <ProducerForm form={useForm()}/>
                     </Paper>
                 </Grid>
                 <Grid
@@ -65,9 +60,10 @@ const InspectorModule = ()=>{
                     <LatestOrders />
                  </Paper> 
                 </Grid>
+               
             </Grid>
         </div>
     )
 }
 
-export default InspectorModule
+export default ProducerModule

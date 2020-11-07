@@ -40,11 +40,7 @@ const ProducerModule = ()=>{
                             justifyContent="space-between">
                             <Typography  variant="h3"
                                  color="Black">
-                                Username
-                            </Typography>
-                            <Typography variant="h3"
-                                 color="Black">
-                                UserType
+                               Lab
                             </Typography>
                             </Box>
                         </Box>

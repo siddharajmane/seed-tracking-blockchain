@@ -17,51 +17,27 @@ const LabUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
         >
           <TextField
             variant="outlined"
-            label="Enter Batch no"
+            label="Enter Tag no"
             value={form.BatchNo||""}
             margin="normal"
             onChange={onchange}
             name="BatchNo">
            </TextField>
-            <TextField
-            variant="outlined"
-            label="Seed Temp"
-            value={form.Temp||""}
-            margin="normal"
+           <TextField
+            id="date"
+           label="Enter test date"
+            type="date"
+            value={form.date||"2017-05-24"}
+            name="date"
             onChange={onchange}
-            name="Temp">
-           </TextField>
+           />
         <TextField
             variant="outlined"
-            label="Purification value"
+            label="Enter result"
             margin="normal"
             onChange={onchange}
-            value={form.Purification||""}
-            name="Purification">
-           </TextField>
-           <TextField
-            variant="outlined"
-            label="Germ value"
-            margin="normal"
-            onChange={onchange}
-            value={form.Germ||""}
-            name="Germ">
-           </TextField>
-           <TextField
-            variant="outlined"
-            label="Seed Moisture"
-            margin="normal"
-            onChange={onchange}
-            value={form.SeedMoisture||""}
-            name="SeedMoisture">
-           </TextField>
-           <TextField
-            variant="outlined"
-            label="Seed Quantity"
-            margin="normal"
-            onChange={onchange}
-            value={form.SeedQuantity||""}
-            name="SeedQuantity">
+            value={form.Result||""}
+            name="Result">
            </TextField>
        </Box>
        <Box p={4}>

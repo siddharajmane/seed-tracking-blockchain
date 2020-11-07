@@ -7,7 +7,8 @@ import {
 } from "@material-ui/core"
 
 
-const InspectorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
+
+const SPAUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
     
     return(
         <Container>
@@ -15,61 +16,78 @@ const InspectorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
         flexDirection="column"
         p={4}
         >
-          <TextField
-            variant="outlined"
-            label="Enter Batch no"
-            value={form.BatchNo||""}
-            margin="normal"
-            onChange={onchange}
-            name="BatchNo">
-           </TextField>
             <TextField
             variant="outlined"
-            label="Enter type of seed"
-            value={form.TypeOfSeed||""}
+            label="Enter Tag no"
+            value={form.BatchID||""}
             margin="normal"
             onChange={onchange}
-            name="TypeOfSeed">
+            name="BatchID">
            </TextField>
         <TextField
             variant="outlined"
-            label="Enter fertilizer used"
+            label="Enter Crop"
             margin="normal"
             onChange={onchange}
-            value={form.Fertilizer||""}
-            name="Fertilizer">
+            value={form.Crop||""}
+            name="Crop">
+           </TextField>
+           <TextField
+            id="date"
+           label="Enter date of issue"
+            type="date"
+            value={form.date||"2017-05-24"}
+            name="date"
+            onChange={onchange}
+           />
+            <TextField
+            variant="outlined"
+            label="Enter Variety if available"
+            margin="normal"
+            onChange={onchange}
+            value={form.Variety||""}
+            name="Variety">
            </TextField>
            <TextField
             variant="outlined"
-            label="Enter seed condition"
+            label="Enter Source Quantity"
             margin="normal"
             onChange={onchange}
-            value={form.SeedCondition||""}
-            name="SeedCondition">
+            value={form.SourceQuantity||""}
+            name="SourceQuantity">
            </TextField>
            <TextField
             variant="outlined"
-            label="Seed Quantity"
+            label="Enter Owner"
             margin="normal"
             onChange={onchange}
-            value={form.SeedQuantity||""}
-            name="SeedQuantity">
+            value={form.Owner||""}
+            name="Owner">
            </TextField>
+           <TextField
+            variant="outlined"
+            label="Enter plot no"
+            margin="normal"
+            onChange={onchange}
+            value={form.Plot||""}
+            name="Plot">
+           </TextField>
+           
+           
        </Box>
        <Box p={4}>
                   <Button
                     type='button'
-                    disabled={registerFormValid}
                     onClick={onsubmit}
                     color="primary"
                     fullWidth
                     variant="contained"
                   >
-                   Update Details
+                    Add batch
                   </Button>
                 </Box>
        </Container>
     )
 }
 
-export default InspectorUIForm;
+export default SPAUIForm;

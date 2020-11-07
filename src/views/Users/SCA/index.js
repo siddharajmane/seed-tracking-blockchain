@@ -1,5 +1,5 @@
 import React from "react"
-import DistributorForm from "./DistributorForm"
+import InspectorForm from "./InspectorForm"
 import useForm from "./useForm"
 import LatestOrders from "../../reports/DashboardView/LatestOrders"
 import {
@@ -24,7 +24,7 @@ import {
       },
     }));
 
-const DistributorModule = ()=>{
+const InspectorModule = ()=>{
 
     const classes = useStyles()
     return(
@@ -40,7 +40,7 @@ const DistributorModule = ()=>{
                             justifyContent="space-between">
                             <Typography  variant="h3"
                                  color="Black">
-                                Distributor
+                                Seed Certification Authority (SCA)
                             </Typography>
                             </Box>
                         </Box>
@@ -48,7 +48,7 @@ const DistributorModule = ()=>{
                 </Grid>
                 <Grid item xs={12}>
                     <Paper elevation={6} className={classes.paper}>
-                        <DistributorForm form={useForm()}/>
+                        <InspectorForm form={useForm()}/>
                     </Paper>
                 </Grid>
                 <Grid
@@ -66,4 +66,4 @@ const DistributorModule = ()=>{
     )
 }
 
-export default DistributorModule;
+export default InspectorModule

@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core"
 
 
-const DistributorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
+const InspectorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
     
     return(
         <Container>
@@ -23,22 +23,6 @@ const DistributorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
             onChange={onchange}
             name="BatchNo">
            </TextField>
-            <TextField
-            variant="outlined"
-            label="Enter Store house details"
-            value={form.StoreHouseDetails||""}
-            margin="normal"
-            onChange={onchange}
-            name="StoreHouseDetails">
-           </TextField>
-           <TextField
-            id="date"
-           label="Enter test date"
-            type="date"
-            value={form.date||"2017-05-24"}
-            name="date"
-            onChange={onchange}
-           />
        </Box>
        <Box p={4}>
                   <Button
@@ -49,11 +33,11 @@ const DistributorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
                     fullWidth
                     variant="contained"
                   >
-                   Update Details
+                      Cultivate 
                   </Button>
                 </Box>
        </Container>
     )
 }
 
-export default DistributorUIForm;
+export default InspectorUIForm;

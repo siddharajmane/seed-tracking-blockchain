@@ -5,10 +5,13 @@ import MainLayout from 'src/layouts/MainLayout';
 import DashboardView from 'src/views/reports/DashboardView';
 import NotFoundView from 'src/views/errors/NotFoundView';
 import RegisterUser from 'src/views/auth/index'
-import ProducerModule from 'src/views/Users/Producer/index'
+import ProcessingPlantModule from 'src/views/Users/ProcessingPlant/index'
 import LabModule from 'src/views/Users/Lab/index'
-import InspectorModule from 'src/views/Users/Inspector/index'
+import SCAModule from 'src/views/Users/SCA/index'
 import DistributorModule from 'src/views/Users/Distributor/index'
+import SPAModule from 'src/views/Users/SPA/index'
+import SGModule from 'src/views/Users/SeedGrower/index'
+import LoginModule from 'src/views/Login/index'
 const routes = [
   {
     path: 'app',
@@ -22,9 +25,12 @@ const routes = [
     path: '/',
     element: <MainLayout />,
     children: [
-      { path: 'producer', element: <ProducerModule/> },
+      { path: 'login', element: <LoginModule/> },
+      { path: 'sg', element: <SGModule/> },
+      { path: 'spa', element: <SPAModule/> },
+      { path: 'pp', element: <ProcessingPlantModule/> },
       { path: 'lab', element: <LabModule/> },
-      { path: 'inspector', element: <InspectorModule/> },
+      { path: 'sca', element: <SCAModule/> },
       { path: 'distributor', element: <DistributorModule/> },
       { path: 'register', element: <RegisterUser /> },
       { path: '404', element: <NotFoundView /> },

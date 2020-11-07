@@ -8,16 +8,14 @@ const useForm = ()=>{
     const onchange = (e)=>{
         setForm({...form,[e.target.name]:e.target.value})
     }
-    console.log("Producerformdata",form)
+    console.log("SG form",form)
 
     const onsubmit = ()=>{
-        console.log("register form submitted",form)
-        alert("Producer form data submitted")
+        console.log("SG form submitted",form)
+        alert("SG form data submitted")
     }
 
-    const registerFormValid = !form.BatchID?.length ||
-    !form.BatchQuantity?.length
-
+    const registerFormValid = !form.BatchNo?.length
 
     return({form,onchange,onsubmit,registerFormValid})
 }

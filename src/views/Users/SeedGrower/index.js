@@ -1,13 +1,14 @@
 import React from "react"
-import ProducerForm from "./ProducerForm"
+import SGForm from "./SGForm"
 import useForm from "./useForm"
+import LatestOrders from "../../reports/DashboardView/LatestOrders"
 import {
     makeStyles,
     Paper,
     Grid,
     Box,
     Typography,
-  } from "@material-ui/core"
+} from "@material-ui/core"
 
   import { SupervisedUserCircleRounded } from '@material-ui/icons'
   
@@ -23,7 +24,7 @@ import {
       },
     }));
 
-const ProducerModule = ()=>{
+const InspectorModule = ()=>{
 
     const classes = useStyles()
     return(
@@ -39,11 +40,7 @@ const ProducerModule = ()=>{
                             justifyContent="space-between">
                             <Typography  variant="h3"
                                  color="Black">
-                                Username
-                            </Typography>
-                            <Typography variant="h3"
-                                 color="Black">
-                                UserType
+                                Seed Grower
                             </Typography>
                             </Box>
                         </Box>
@@ -51,13 +48,22 @@ const ProducerModule = ()=>{
                 </Grid>
                 <Grid item xs={12}>
                     <Paper elevation={6} className={classes.paper}>
-                        <ProducerForm form={useForm()}/>
+                        <SGForm form={useForm()}/>
                     </Paper>
                 </Grid>
-               
+                <Grid
+                item
+                lg={12}
+                md={12}
+                xl={9}
+                xs={12}>
+                <Paper elevation={6} className={classes.paper}>
+                    <LatestOrders />
+                 </Paper> 
+                </Grid>
             </Grid>
         </div>
     )
 }
 
-export default ProducerModule
+export default InspectorModule
