@@ -23,6 +23,14 @@ const InspectorUIForm=({form:{form,onchange,onsubmit,registerFormValid}})=>{
             onChange={onchange}
             name="BatchNo">
            </TextField>
+           <TextField
+            id="date"
+           label="Enter date of issue"
+            type="date"
+            value={form.date||"2020-05-24"}
+            name="date"
+            onChange={onchange}
+           />
        </Box>
        <Box p={4}>
                   <Button

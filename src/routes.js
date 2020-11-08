@@ -12,6 +12,7 @@ import DistributorModule from 'src/views/Users/Distributor/index'
 import SPAModule from 'src/views/Users/SPA/index'
 import SGModule from 'src/views/Users/SeedGrower/index'
 import LoginModule from 'src/views/Login/index'
+import ConsumerModule from 'src/views/Users/Consumer/index'
 const routes = [
   {
     path: 'app',
@@ -26,6 +27,7 @@ const routes = [
     element: <MainLayout />,
     children: [
       { path: 'login', element: <LoginModule/> },
+      { path: 'consumer', element: <ConsumerModule/> },
       { path: 'sg', element: <SGModule/> },
       { path: 'spa', element: <SPAModule/> },
       { path: 'pp', element: <ProcessingPlantModule/> },

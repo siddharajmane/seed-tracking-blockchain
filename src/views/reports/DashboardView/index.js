@@ -1,15 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {
   Container,
   Grid,
   makeStyles
 } from '@material-ui/core';
+import {useNavigate} from "react-router-dom"
 import Page from 'src/components/Page';
 import UserTile from './UserTile';
 import LatestOrders from './LatestOrders';
 import BatchTile from './BatchTile';
 import RoleTile from './RoleTile';
-
+import web3 from '../../../web3'
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -20,6 +21,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dashboard = () => {
+
+  const navigate  = useNavigate();
+
+  useEffect(()=>{
+    web3.eth.getAccounts().then(res=>{
+      if(res[0]==="0xFF6b4F6C7591a562276dD0FF73c44f564b03961f"){
+        navigate("/app/dashboard");
+      }
+      else{
+        navigate("/login")
+      }
+    })
+  },[])
   const classes = useStyles();
 
   return (

@@ -1,6 +1,6 @@
-
 import {useState} from "react";
-
+import web3 from "../../../web3"
+import contract from "../../../contract"
 
 const useForm = ()=>{
     const [form, setForm] = useState({});
@@ -12,6 +12,17 @@ const useForm = ()=>{
 
     const onsubmit = ()=>{
         console.log("SG form submitted",form)
+        web3.eth.getAccounts().then(res=>{
+            console.log(res[0])
+            contract.methods.setSeedGrower(form.BatchNo,form.date).send({
+                from:res[0],gas:3000000
+               }).then(function(res){
+                 console.log(res)
+               })
+        }).catch(err=>{
+            console.log(err)
+        })
+
         alert("SG form data submitted")
     }
 

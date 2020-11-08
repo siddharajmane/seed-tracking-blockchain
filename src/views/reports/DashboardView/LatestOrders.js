@@ -109,26 +109,13 @@ const LatestOrders = ({ className, ...rest }) => {
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Order Ref
+                  Tag No
                 </TableCell>
                 <TableCell>
-                  Customer
-                </TableCell>
-                <TableCell sortDirection="desc">
-                  <Tooltip
-                    enterDelay={300}
-                    title="Sort"
-                  >
-                    <TableSortLabel
-                      active
-                      direction="desc"
-                    >
-                      Date
-                    </TableSortLabel>
-                  </Tooltip>
+                  Date
                 </TableCell>
                 <TableCell>
-                  Status
+                  Next Action Pending
                 </TableCell>
               </TableRow>
             </TableHead>

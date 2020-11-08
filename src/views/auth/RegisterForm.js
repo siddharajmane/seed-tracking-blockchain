@@ -72,12 +72,12 @@ const RegisterView = ({form:{form,onchange,onsubmit,registerFormValid}}) => {
                 >
                    <FormLabel component="legend">Select User Type</FormLabel>
                     <RadioGroup aria-label="userType" name="userType" value={form.userType||"Producer"} onChange={onchange}>
-                    <FormControlLabel value="BatchDetails" control={<Radio />} label="Seed Producing agency" />
-                    <FormControlLabel value="seedGrower" control={<Radio />} label="Seed Grower" />
-                    <FormControlLabel value="processor" control={<Radio />} label="Seed Processor" />
-                    <FormControlLabel value="lab" control={<Radio />} label="Lab" />
-                    <FormControlLabel value="certification" control={<Radio />} label="Seed Certification authority" />
-                    <FormControlLabel value="distribution" control={<Radio />} label="Distributor" />
+                    <FormControlLabel value="SeedProducingAgency" control={<Radio />} label="Seed Producing agency" />
+                    <FormControlLabel value="SeedGrower" control={<Radio />} label="Seed Grower" />
+                    <FormControlLabel value="Processor" control={<Radio />} label="Seed Processor" />
+                    <FormControlLabel value="Lab" control={<Radio />} label="Lab" />
+                    <FormControlLabel value="Certification" control={<Radio />} label="Seed Certification authority" />
+                    <FormControlLabel value="Distributor" control={<Radio />} label="Distributor" />
 
                     </RadioGroup>
                 </Box>
