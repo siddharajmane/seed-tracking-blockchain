@@ -1,6 +1,7 @@
-import React from "react"
+import React,{useState,useEffect} from "react"
 import DistributorForm from "./DistributorForm"
 import useForm from "./useForm"
+import contract from '../../../contract'
 import LatestOrders from "../../reports/DashboardView/LatestOrders"
 import {
     makeStyles,
@@ -8,6 +9,7 @@ import {
     Grid,
     Box,
     Typography,
+    Button
 } from "@material-ui/core"
 
   import { SupervisedUserCircleRounded } from '@material-ui/icons'
@@ -25,6 +27,38 @@ import {
     }));
 
 const DistributorModule = ()=>{
+
+    const [tabledata,settabledata] = useState();
+    const [showdata,setshowdata] = useState(false)
+      const logdata=[]
+      useEffect(()=>{
+          const getbatchdata= async()=>{
+              await contract.getPastEvents('BatchAdded',{
+                 fromBlock : 0
+                }, function(err,event){
+                  event.forEach(element => {
+                     const object ={}
+                    contract.methods.getNextAction(element.returnValues[1]).call().then(function(res){
+                      if(res==="Distributor"){
+                          object.action = res
+                          object.TagNo=element.returnValues[1]
+                          contract.methods.getBatchDetails(element.returnValues[1]).call().then(function(res){
+                              object.date = res._Date
+                              logdata.push(object)
+                          })
+                      }
+                    })
+                  });
+                  console.log(logdata)
+                  settabledata(logdata)
+                })
+             }
+             getbatchdata();
+      },[])
+  
+      const onsubmit = ()=>{
+          setshowdata(true)
+      }
 
     const classes = useStyles()
     return(
@@ -58,7 +92,18 @@ const DistributorModule = ()=>{
                 xl={9}
                 xs={12}>
                 <Paper elevation={6} className={classes.paper}>
-                    <LatestOrders />
+                <Box my={2}>
+                  <Button
+                    type='button'
+                    onClick={onsubmit}
+                    color="primary"
+                    size="large"
+                    variant="contained"
+                  >
+                    Show Transactions
+                  </Button>
+                </Box>
+                    <LatestOrders data={tabledata} showdata={showdata} />
                  </Paper> 
                 </Grid>
             </Grid>
