@@ -1,5 +1,6 @@
 import React,{useState} from "react"
-import LatestOrders from "../../reports/DashboardView/LatestOrders"
+import contract from "../../../contract"
+import Stepper from "./Stepper"
 import {
     makeStyles,
     Paper,
@@ -27,15 +28,27 @@ import {
 
 const ConsumerModule = ()=>{
 
-    const [form,setForm] = useState({});
+    const [trackingdata,settrackingdata] = useState();
+    const [status,setstatus] = useState(false)
+    const [tagid,settagid] = useState('');
+    const onsubmit= async()=>{
 
-    const onchange= (e)=>{
-
-        setForm({...form,[e.target.name]:e.target.value})
-
-    }
-    const onsubmit=()=>{
-        console.log(form)
+        if(status===true){
+            setstatus(false)
+            await contract.methods.consumer(tagid).call().then(res=>{
+                console.log(res[0][0]);
+                console.log(res)
+                settrackingdata(res);
+                setstatus(true)
+           })
+        }else{
+            await contract.methods.consumer(tagid).call().then(res=>{
+                console.log(res[0][0]);
+                console.log(res)
+                settrackingdata(res);
+                setstatus(true)
+           }) 
+        }
     }
 
 
@@ -69,9 +82,9 @@ const ConsumerModule = ()=>{
                      <TextField
                          variant="outlined"
                         label="Enter Tag no"
-                        value={form.BatchNo||""}
+                        value={tagid}
                         margin="normal"
-                        onChange={onchange}
+                        onChange={(e)=>settagid(e.target.value)}
                          name="BatchNo">
                     </TextField>
                         </Box>
@@ -92,22 +105,15 @@ const ConsumerModule = ()=>{
                 <Grid item xs={6}>
                 <Paper elevation={6} className={classes.paper}>
                     <Container>
-                    <Typography  variant="h5"
+                    <Typography  variant="h3"
                                  color="Black">
                                 Tracking Details
                             </Typography>
                     </Container>
+                    <Box m={3}>
+                    <Stepper data={trackingdata} status={status}/>
+                    </Box>
                 </Paper>
-                </Grid>
-                <Grid
-                item
-                lg={12}
-                md={12}
-                xl={9}
-                xs={12}>
-                <Paper elevation={6} className={classes.paper}>
-                    <LatestOrders />
-                 </Paper> 
                 </Grid>
             </Grid>
         </div>
