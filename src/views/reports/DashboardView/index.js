@@ -8,7 +8,6 @@ import {
 } from '@material-ui/core';
 import {useNavigate} from "react-router-dom"
 import Page from 'src/components/Page';
-import UserTile from './UserTile';
 import LatestOrders from './LatestOrders';
 import BatchTile from './BatchTile';
 import RoleTile from './RoleTile';
@@ -81,18 +80,10 @@ const Dashboard = () => {
           container
           spacing={3}
         >
+  
           <Grid
             item
-            lg={4}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <UserTile />
-          </Grid>
-          <Grid
-            item
-            lg={4}
+            lg={6}
             sm={6}
             xl={3}
             xs={12}
@@ -101,7 +92,7 @@ const Dashboard = () => {
           </Grid>
           <Grid
             item
-            lg={4}
+            lg={6}
             sm={6}
             xl={3}
             xs={12}

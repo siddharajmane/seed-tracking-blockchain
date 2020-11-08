@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
@@ -14,8 +14,6 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  TableSortLabel,
-  Tooltip,
   makeStyles
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -30,7 +28,6 @@ const useStyles = makeStyles(() => ({
 
 const LatestOrders = ({ data, showdata}) => {
   const classes = useStyles();
-  console.log(data)
   if(showdata===true){
     return (
       <Card
