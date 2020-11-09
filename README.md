@@ -23,6 +23,7 @@ Date and other information. The following stakeholders are involved
 # Deploying smart contract
 Clone smart contract repository for this porject
 ```git clone https://github.com/codenikhil1/seedCertification_backend.git```
+The code above has been contributed by ***codenikhil1*** as this is Duo Project.
 
 Then run the below command
 ```truffle migrate --reset```
