@@ -40,5 +40,78 @@ Then run the below command
 - Then
   ```npm start```
   
-## Following are process in the application
+## Following are the development screens
+
+### Admin
+This page consiste of insights of batch added and their progress and also privilege to add stakeholders in the process.
+```/app/dashboard```
+
+---
+![](screens/admin.PNG)
+
+### Consumer
+This page consist field to enter tagno which is important for tracking and click to get tracking info
+```/consumer```
+
+---
+![](screens/consumer.PNG)
+
+### Login
+The user must be logged in metamask login and then click on login for further process.
+```/login```
+
+---
+![](screens/login.PNG)
+
+### Registration
+This page consist of fields to add user
+```/registration```
+
+---
+![](screens/registration.PNG)
+
+### Seed Producing Agency (SPA)
+```/SPA```
+
+---
+![](screens/SPA.PNG)
+
+### Seed Grower (SG)
+```/SG```
+
+---
+![](screens/SG.PNG)
+
+### Seed Processor
+```/SP```
+
+---
+![](screens/PP.PNG)
+
+### Lab
+```/lab```
+
+---
+![](screens/lab.PNG)
+
+### Seed Certification Authority (SCA)
+```/SCA```
+
+---
+![](screens/SCA.PNG)
+
+### Distributor
+```/distributor```
+
+---
+![](screens/distributor.PNG)
+
+# Further improvements 
+- Add QR code for Batch in process so can be tracked by QR.
+- More fields and stakeholders can be added.
+- Local language support. eg Marathi, Hindi etc.
+
+
+
+
 
